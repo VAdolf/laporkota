@@ -173,6 +173,7 @@ Cakupan pengujian meliputi autentikasi, pembatasan akses per peran, validasi lap
 |---|---|
 | Foto laporan tidak tampil (muncul teks alternatif gambar) | Tautan penyimpanan belum ada atau rusak. Jalankan `php artisan storage:link`. Jika sudah ada, hapus lalu buat ulang: `Remove-Item public\storage` (Windows PowerShell) atau `rm public/storage` (Linux/macOS), kemudian `php artisan storage:link`. Pada Windows, jalankan terminal sebagai administrator atau aktifkan Developer Mode bila muncul galat izin symlink. Foto tidak termasuk dalam repositori, sehingga foto dari komputer lain tidak ikut terbawa. |
 | Tampilan polos tanpa CSS | Aset belum dikompilasi. Jalankan `npm install`, lalu `npm run dev` (atau `npm run build`). Jika `npm run dev` sudah dihentikan, pastikan berkas `public/hot` tidak tertinggal. |
+| Galat `npm.ps1 cannot be loaded because running scripts is disabled` (Windows PowerShell) | PowerShell memblokir skrip npm. Jalankan sekali dari folder mana pun: `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` (jawab `Y`), lalu ulangi perintah npm. |
 | Galat `Vite manifest not found` | Aset belum dibuild. Jalankan `npm run build`. |
 | Galat koneksi basis data | Pastikan MySQL menyala, basis data `db_laporkota` sudah dibuat, dan pengaturan `DB_*` pada `.env` benar. Lalu jalankan `php artisan config:clear`. |
 | `migrate --seed` gagal karena email sudah terdaftar | Seeder sudah pernah dijalankan. Gunakan `php artisan migrate:fresh --seed` (menghapus seluruh data). |
