@@ -102,33 +102,10 @@ Seluruh halaman memerlukan login. Pembatasan akses dilakukan oleh middleware `au
    ```bash
    # Windows
    copy .env.example .env
-   # Linux / macOS
-   # cp .env.example .env
-
    php artisan key:generate
    ```
 
-4. **Buat basis data** bernama `db_laporkota` (misalnya lewat phpMyAdmin), lalu ubah pengaturan pada `.env`:
-
-   ```env
-   APP_NAME=LaporKota
-   APP_LOCALE=id
-
-   DB_CONNECTION=mysql
-   DB_HOST=127.0.0.1
-   DB_PORT=3306
-   DB_DATABASE=db_laporkota
-   DB_USERNAME=root
-   DB_PASSWORD=
-   ```
-
-   Opsional, titik tengah awal peta (bawaan: pusat Kota Surabaya sebagai placeholder untuk Kota X):
-
-   ```env
-   MAP_DEFAULT_LAT=-7.2575
-   MAP_DEFAULT_LNG=112.7521
-   MAP_DEFAULT_ZOOM=13
-   ```
+4. **Buat basis data** bernama `db_laporkota` (misalnya lewat phpMyAdmin)
 
 5. **Jalankan migrasi, seeder, dan tautan penyimpanan**
 
@@ -181,13 +158,7 @@ php artisan serve
 cloudflared tunnel --url http://localhost:8000
 ```
 
-Buka alamat `https://...trycloudflare.com` yang tampil di terminal. Agar tampilan benar melalui proxy, tambahkan sementara pada `bootstrap/app.php`, di dalam `withMiddleware`:
-
-```php
-$middleware->trustProxies(at: '*');
-```
-
-Hapus baris tersebut setelah demo selesai.
+Buka alamat `https://...trycloudflare.com` yang tampil di terminal. 
 
 ## Pengujian
 
