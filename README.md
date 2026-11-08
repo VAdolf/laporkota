@@ -146,10 +146,7 @@ Aplikasi berjalan di komputer, dan ponsel membukanya melalui peramban.
 
 ```bash
 npm run build
-php artisan serve --host=0.0.0.0
 ```
-
-Buka `http://IP-KOMPUTER:8000` di ponsel (cek IP dengan `ipconfig`). Tombol lokasi perangkat tidak berfungsi pada alamat HTTP biasa, tetapi titik lokasi tetap dapat dipilih manual pada peta.
 
 **HTTPS sementara untuk demo (Cloudflare Quick Tunnel, gratis)**
 
